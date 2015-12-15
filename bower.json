@@ -1,0 +1,19 @@
+{
+  "name": "ff-webcheck",
+  "version": "0.0.0",
+  "authors": [
+    "Pixelistik <code@pixelistik.de>"
+  ],
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
