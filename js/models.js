@@ -105,5 +105,41 @@
         getIPs(function (ip) {
             this.ips.push(ip);
         }.bind(this))
+
+        /**
+         * http://stackoverflow.com/a/7609202/376138
+         */
+        var checkResourceConnectivity = function checkResourceConnectivity(url, callback) {
+            var tag = document.createElement('script');
+            tag.src = url;
+            //tag.type = 'application/x-unknown';
+            tag.async = true;
+            tag.onload = function (e) {
+                document.getElementsByTagName('head')[0].removeChild(tag);
+                callback(url, true);
+            };
+            tag.onerror = function (e) {
+                document.getElementsByTagName('head')[0].removeChild(tag);
+                callback(url, false);
+            };
+            document.getElementsByTagName('head')[0].appendChild(tag);
+        }
+
+        var connectivityTestUrls = [
+            { url: "http://google.com"},
+            { url: "http://ipv6.test-ipv6.com/"},
+            { url: "http://10.155.0.1/cgi-bin/status"},
+        ];
+
+        this.urlConnectivity = global.ko.observableArray([]);
+
+        connectivityTestUrls.forEach(function (url) {
+            checkResourceConnectivity(url.url, function (url, success) {
+                this.urlConnectivity.push({
+                    url: url,
+                    success: success
+                });
+            }.bind(this))
+        }.bind(this));
     };
 }(window));

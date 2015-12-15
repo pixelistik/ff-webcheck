@@ -24,6 +24,15 @@
             <li data-bind="text: $data">
             </li>
         </ul>
+
+        <h2>Connectivity</h2>
+
+        <ul data-bind="foreach: urlConnectivity">
+            <li>
+                <span data-bind="text: url"></span>
+                <span data-bind="text: success"></span>
+            </li>
+        </ul>
         
         <script src="bower_components/knockout/dist/knockout.debug.js"></script>
         <script src="js/models.js"></script>
