@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    </head>
+    <body>
+        <h1>ff-webcheck</h1>
+
+        <h2>IP addresses</h2>
+        <h3>Local</h3>
+        <ul data-bind="foreach: localIps">
+            <li data-bind="text: $data">
+            </li>
+        </ul>
+
+        <h3>Public</h3>
+        <ul data-bind="foreach: publicIps">
+            <li data-bind="text: $data">
+            </li>
+        </ul>
+
+        <h3>IPv6</h3>
+        <ul data-bind="foreach: v6Ips">
+            <li data-bind="text: $data">
+            </li>
+        </ul>
+        
+        <script src="bower_components/knockout/dist/knockout.debug.js"></script>
+        <script src="js/models.js"></script>
+        <script src="js/app.js"></script>
+    </body>
+</html>
