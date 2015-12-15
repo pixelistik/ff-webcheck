@@ -2,38 +2,41 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     </head>
     <body>
-        <h1>ff-webcheck</h1>
+        <div class="container">
+            <h1>ff-webcheck</h1>
 
-        <h2>IP addresses</h2>
-        <h3>Local</h3>
-        <ul data-bind="foreach: localIps">
-            <li data-bind="text: $data">
-            </li>
-        </ul>
+            <h2>IP addresses</h2>
+            <h3>Local</h3>
+            <ul data-bind="foreach: localIps">
+                <li data-bind="text: $data">
+                </li>
+            </ul>
 
-        <h3>Public</h3>
-        <ul data-bind="foreach: publicIps">
-            <li data-bind="text: $data">
-            </li>
-        </ul>
+            <h3>Public</h3>
+            <ul data-bind="foreach: publicIps">
+                <li data-bind="text: $data">
+                </li>
+            </ul>
 
-        <h3>IPv6</h3>
-        <ul data-bind="foreach: v6Ips">
-            <li data-bind="text: $data">
-            </li>
-        </ul>
+            <h3>IPv6</h3>
+            <ul data-bind="foreach: v6Ips">
+                <li data-bind="text: $data">
+                </li>
+            </ul>
 
-        <h2>Connectivity</h2>
+            <h2>Connectivity</h2>
 
-        <ul data-bind="foreach: urlConnectivity">
-            <li>
-                <span data-bind="text: url"></span>
-                <span data-bind="text: success"></span>
-            </li>
-        </ul>
-        
+            <ul data-bind="foreach: urlConnectivity">
+                <li data-bind="css: {'text-success': success}">
+                    <span data-bind="text: url"></span>
+                    <span data-bind="text: success"></span>
+                </li>
+            </ul>
+        </div>
         <script src="bower_components/knockout/dist/knockout.debug.js"></script>
         <script src="js/models.js"></script>
         <script src="js/app.js"></script>
