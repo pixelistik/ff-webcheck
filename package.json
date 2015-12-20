@@ -1,0 +1,21 @@
+{
+  "name": "ff-webcheck",
+  "version": "0.0.0",
+  "description": "",
+  "main": " ",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/pixelistik/ff-webcheck.git"
+  },
+  "author": "pixelistik",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pixelistik/ff-webcheck/issues"
+  },
+  "devDependencies": {
+    "mocha": "~2.3.4"
+  }
+}
