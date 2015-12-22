@@ -1,9 +1,11 @@
 "use strict";
 var ko = require("knockout");
+var stun = require("./stun.js");
+var checkResourceConnectivity = require("./checkresourceconnectivity.js")
 
 var FfWebcheck = function FfWebcheck() {
 
-    var getIPs = require("./stun.js").getIPs;
+    var getIPs = stun.getIPs;
 
     this.ips = ko.observableArray([]);
 
@@ -32,26 +34,6 @@ var FfWebcheck = function FfWebcheck() {
 
     this.communitiesByIp = ko.pureComputed(function () {
         var ipRanges = require("./ipranges.js");
-    });
-
-    /**
-     * http://stackoverflow.com/a/7609202/376138
-     */
-    var checkResourceConnectivity = function checkResourceConnectivity(url, callback) {
-        var tag = document.createElement('script');
-        tag.src = url;
-        //tag.type = 'application/x-unknown';
-        tag.async = true;
-        tag.onload = function (e) {
-            document.getElementsByTagName('head')[0].removeChild(tag);
-            callback(url, true);
-        };
-        tag.onerror = function (e) {
-            document.getElementsByTagName('head')[0].removeChild(tag);
-            callback(url, false);
-        };
-        document.getElementsByTagName('head')[0].appendChild(tag);
-    }
 
     var connectivityTestUrls = [
         { url: "http://google.com"},
