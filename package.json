@@ -19,10 +19,10 @@
   },
   "devDependencies": {
     "mocha": "~2.3.4",
-    "knockout": "~3.4.0",
     "watchify": "~3.6.1"
   },
   "dependencies": {
-    "browserify": "~12.0.1"
+    "browserify": "~12.0.1",
+    "knockout": "~3.4.0"
   }
 }
