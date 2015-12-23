@@ -22,4 +22,41 @@ describe("FfWebcheck", function () {
     it("should instantiate", function () {
         assert(typeof ffWebcheck !== "undefined");
     })
+
+    describe("Domain detection by IP address", function () {
+        var TEST_COMMUNITY_IP_RANGES = [
+            {
+                name: "One",
+                range: "123.456.789.0/24"
+            },
+            {
+                name: "Two",
+                range: "456.123.987.0/24"
+            }
+        ];
+
+        it("should identify community One", function () {
+            ffWebcheck.COMMUNITY_IP_RANGES = TEST_COMMUNITY_IP_RANGES;
+            ffWebcheck.ips(["123.456.789.1"]);
+            var result = ffWebcheck.communitiesByIp();
+
+            assert.strictEqual(result, TEST_COMMUNITY_IP_RANGES[0]);
+        });
+
+        it("should identify community Two", function () {
+            ffWebcheck.COMMUNITY_IP_RANGES = TEST_COMMUNITY_IP_RANGES;
+            ffWebcheck.ips(["456.123.987.1"]);
+            var result = ffWebcheck.communitiesByIp();
+
+            assert.strictEqual(result, TEST_COMMUNITY_IP_RANGES[1]);
+        });
+
+        it("should return false if no domain identified", function () {
+            ffWebcheck.COMMUNITY_IP_RANGES = TEST_COMMUNITY_IP_RANGES;
+            ffWebcheck.ips(["999.999.999.999"]);
+            var result = ffWebcheck.communitiesByIp();
+
+            assert.strictEqual(result, null);
+        });
+    });
 })

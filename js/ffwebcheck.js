@@ -32,8 +32,31 @@ var FfWebcheck = function FfWebcheck() {
         this.ips.push(ip);
     }.bind(this))
 
+    this.COMMUNITY_IP_RANGES = [
+        {
+            name: "Test community",
+            range: "37.24.185.0/24"
+        }
+    ];
+
     this.communitiesByIp = ko.pureComputed(function () {
         var ipRanges = require("./ipranges.js");
+        var ip = this.publicIps()[0];
+
+        if (typeof ip === "undefined") {
+            return [];
+        }
+
+        var matchingCommunities = this.COMMUNITY_IP_RANGES.filter(function (community) {
+            return ipRanges.isPartOfRange(community.range, ip);
+        }.bind(this));
+
+        if (matchingCommunities.length === 1) {
+            return matchingCommunities[0];
+        } else {
+            return null;
+        }
+    }.bind(this));
 
     var connectivityTestUrls = [
         { url: "http://google.com"},
