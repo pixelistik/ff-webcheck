@@ -51,7 +51,7 @@ var FfWebcheck = function FfWebcheck() {
         });
 
         if (matchingCommunities.length === 1) {
-            return matchingCommunities[0];
+            return matchingCommunities[0].name;
         } else {
             return null;
         }
