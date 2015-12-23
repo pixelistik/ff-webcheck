@@ -38,7 +38,7 @@ describe("FfWebcheck", function () {
         it("should identify community One", function () {
             ffWebcheck.COMMUNITY_IP_RANGES = TEST_COMMUNITY_IP_RANGES;
             ffWebcheck.ips(["123.456.789.1"]);
-            var result = ffWebcheck.communitiesByIp();
+            var result = ffWebcheck.communityFromIp();
 
             assert.strictEqual(result, TEST_COMMUNITY_IP_RANGES[0]);
         });
@@ -46,7 +46,7 @@ describe("FfWebcheck", function () {
         it("should identify community Two", function () {
             ffWebcheck.COMMUNITY_IP_RANGES = TEST_COMMUNITY_IP_RANGES;
             ffWebcheck.ips(["456.123.987.1"]);
-            var result = ffWebcheck.communitiesByIp();
+            var result = ffWebcheck.communityFromIp();
 
             assert.strictEqual(result, TEST_COMMUNITY_IP_RANGES[1]);
         });
@@ -54,7 +54,7 @@ describe("FfWebcheck", function () {
         it("should return null if no domain identified", function () {
             ffWebcheck.COMMUNITY_IP_RANGES = TEST_COMMUNITY_IP_RANGES;
             ffWebcheck.ips(["999.999.999.999"]);
-            var result = ffWebcheck.communitiesByIp();
+            var result = ffWebcheck.communityFromIp();
 
             assert.strictEqual(result, null);
         });
@@ -62,7 +62,7 @@ describe("FfWebcheck", function () {
         it("should identify community One by the second public IP", function () {
             ffWebcheck.COMMUNITY_IP_RANGES = TEST_COMMUNITY_IP_RANGES;
             ffWebcheck.ips(["999.999.999.999", "123.456.789.1"]);
-            var result = ffWebcheck.communitiesByIp();
+            var result = ffWebcheck.communityFromIp();
 
             assert.strictEqual(result, TEST_COMMUNITY_IP_RANGES[0]);
         });
@@ -70,7 +70,7 @@ describe("FfWebcheck", function () {
         it("should return null if no IP addresses are known", function () {
             ffWebcheck.COMMUNITY_IP_RANGES = TEST_COMMUNITY_IP_RANGES;
             ffWebcheck.ips([]);
-            var result = ffWebcheck.communitiesByIp();
+            var result = ffWebcheck.communityFromIp();
 
             assert.strictEqual(result, null);
         });
@@ -78,7 +78,7 @@ describe("FfWebcheck", function () {
         it("should return null if no public IP addresses are known", function () {
             ffWebcheck.COMMUNITY_IP_RANGES = TEST_COMMUNITY_IP_RANGES;
             ffWebcheck.ips(["192.168.1.1"]);
-            var result = ffWebcheck.communitiesByIp();
+            var result = ffWebcheck.communityFromIp();
 
             assert.strictEqual(result, null);
         });

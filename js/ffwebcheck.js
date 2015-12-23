@@ -34,7 +34,7 @@ var FfWebcheck = function FfWebcheck() {
 
     this.COMMUNITY_IP_RANGES = require("../data/communities/communities.json");
 
-    this.communitiesByIp = ko.pureComputed(function () {
+    this.communityFromIp = ko.pureComputed(function () {
         var ipRanges = require("./ipranges.js");
         var publicIps = this.publicIps();
 
