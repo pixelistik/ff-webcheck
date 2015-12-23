@@ -4,9 +4,6 @@ var stun = require("./stun.js");
 var checkResourceConnectivity = require("./checkresourceconnectivity.js")
 
 var FfWebcheck = function FfWebcheck() {
-
-    var getIPs = stun.getIPs;
-
     this.ips = ko.observableArray([]);
 
     this.localIps = ko.pureComputed(function () {
@@ -28,7 +25,7 @@ var FfWebcheck = function FfWebcheck() {
         });
     }.bind(this));
 
-    getIPs(function (ip) {
+    stun.getIPs(function (ip) {
         this.ips.push(ip);
     }.bind(this))
 
