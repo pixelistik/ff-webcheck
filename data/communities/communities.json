@@ -1,0 +1,494 @@
+[
+    {
+        "range": "10.35.0.0/16", 
+        "name": "cottbus"
+    }, 
+    {
+        "range": "10.1.176.0/20", 
+        "name": "borken"
+    }, 
+    {
+        "range": "10.189.0.0/18", 
+        "name": "helgoland"
+    }, 
+    {
+        "range": "10.141.128.0/17", 
+        "name": "engelskirchen"
+    }, 
+    {
+        "range": "10.130.0.0/16", 
+        "name": "luebeck"
+    }, 
+    {
+        "range": "10.156.0.0/16", 
+        "name": "glwupper"
+    }, 
+    {
+        "range": "10.22.0.0/16", 
+        "name": "potsdam"
+    }, 
+    {
+        "range": "10.79.0.0/16", 
+        "name": "bottrop"
+    }, 
+    {
+        "range": "10.252.0.0/18", 
+        "name": "celle"
+    }, 
+    {
+        "range": "10.129.0.0/16", 
+        "name": "flensburg"
+    }, 
+    {
+        "range": "10.105.64.0/18", 
+        "name": "heilsbronn"
+    }, 
+    {
+        "range": "10.116.0.0/16", 
+        "name": "kiel"
+    }, 
+    {
+        "range": "10.206.0.0/16", 
+        "name": "gronau"
+    }, 
+    {
+        "range": "10.56.0.0/16", 
+        "name": "wiesbaden"
+    }, 
+    {
+        "range": "10.11.112.0/20", 
+        "name": "heiligenhaus"
+    }, 
+    {
+        "range": "10.128.0.0/18", 
+        "name": "marburg"
+    }, 
+    {
+        "range": "87.239.143.0/25", 
+        "name": "giessen"
+    }, 
+    {
+        "range": "10.24.0.0/20", 
+        "name": "treuenbrietzen"
+    }, 
+    {
+        "range": "10.147.0.0/16", 
+        "name": "brandenburg"
+    }, 
+    {
+        "range": "10.38.0.0/16", 
+        "name": "braunschweig"
+    }, 
+    {
+        "range": "10.112.0.0/16", 
+        "name": "hamburg"
+    }, 
+    {
+        "range": "10.123.2.0/24", 
+        "name": "neuendettelsau"
+    }, 
+    {
+        "range": "10.196.0.0/16", 
+        "name": "bremen"
+    }, 
+    {
+        "range": "10.214.0.0/16", 
+        "name": "karlsruhe"
+    }, 
+    {
+        "range": "10.76.0.0/16", 
+        "name": "leverkusen"
+    }, 
+    {
+        "range": "10.224.0.0/16", 
+        "name": "wipperfuerth"
+    }, 
+    {
+        "range": "10.137.0.0/16", 
+        "name": "pinneberg"
+    }, 
+    {
+        "range": "10.37.0.0/16", 
+        "name": "mainz"
+    }, 
+    {
+        "range": "10.135.0.0/16", 
+        "name": "ostholstein"
+    }, 
+    {
+        "range": "10.172.0.0/16", 
+        "name": "trier"
+    }, 
+    {
+        "range": "10.222.0.0/16", 
+        "name": "mayen-koblenz"
+    }, 
+    {
+        "range": "10.155.0.0/20", 
+        "name": "flingern"
+    }, 
+    {
+        "range": "10.25.0.0/16", 
+        "name": "bingen"
+    }, 
+    {
+        "range": "10.28.0.0/16", 
+        "name": "gelsenkirchen"
+    }, 
+    {
+        "range": "10.43.0.0/16", 
+        "name": "muensterland"
+    }, 
+    {
+        "range": "10.12.0.0/16", 
+        "name": "graz"
+    }, 
+    {
+        "range": "10.51.0.0/16", 
+        "name": "weststeiermark"
+    }, 
+    {
+        "range": "10.154.0.0/16", 
+        "name": "hagen"
+    }, 
+    {
+        "range": "10.6.0.0/16", 
+        "name": "solingen"
+    }, 
+    {
+        "range": "10.213.0.0/16", 
+        "name": "diepholz"
+    }, 
+    {
+        "range": "10.17.0.0/16", 
+        "name": "jena"
+    }, 
+    {
+        "range": "10.120.0.0/16", 
+        "name": "altdorf"
+    }, 
+    {
+        "range": "10.134.0.0/16", 
+        "name": "uelzen"
+    }, 
+    {
+        "range": "10.216.0.0/16", 
+        "name": "luenen"
+    }, 
+    {
+        "range": "10.255.0.0/16", 
+        "name": "guetersloh"
+    }, 
+    {
+        "range": "10.47.0.0/16", 
+        "name": "euskirchen"
+    }, 
+    {
+        "range": "10.11.96.0/20", 
+        "name": "hameln"
+    }, 
+    {
+        "range": "10.93.0.0/22", 
+        "name": "wahlsdorf"
+    }, 
+    {
+        "range": "10.23.0.0/16", 
+        "name": "waldheim"
+    }, 
+    {
+        "range": "10.200.0.0/16", 
+        "name": "dresden"
+    }, 
+    {
+        "range": "10.1.128.0/19", 
+        "name": "heiligkreuztal"
+    }, 
+    {
+        "range": "10.198.0.0/16", 
+        "name": "westpfalz"
+    }, 
+    {
+        "range": "10.169.0.0/16", 
+        "name": "mueritz"
+    }, 
+    {
+        "range": "10.0.0.0/16", 
+        "name": "ruhrgebiet"
+    }, 
+    {
+        "range": "10.13.0.0/18", 
+        "name": "westkueste"
+    }, 
+    {
+        "range": "10.185.0.0/16", 
+        "name": "fulda"
+    }, 
+    {
+        "range": "10.132.0.0/16", 
+        "name": "paderborn"
+    }, 
+    {
+        "range": "10.126.0.0/16", 
+        "name": "frankfurt"
+    }, 
+    {
+        "range": "10.139.0.0/16", 
+        "name": "magdeburg"
+    }, 
+    {
+        "range": "10.10.0.0/16", 
+        "name": "ingolstadt"
+    }, 
+    {
+        "range": "10.11.80.0/20", 
+        "name": "velbert"
+    }, 
+    {
+        "range": "10.181.0.0/16", 
+        "name": "gera-greiz"
+    }, 
+    {
+        "range": "10.5.0.0/16", 
+        "name": "aachen"
+    }, 
+    {
+        "range": "10.29.0.0/16", 
+        "name": "bielefeld"
+    }, 
+    {
+        "range": "10.69.0.0/16", 
+        "name": "remscheid"
+    }, 
+    {
+        "range": "10.219.0.0/18", 
+        "name": "rhein-erft-kreis"
+    }, 
+    {
+        "range": "10.158.0.0/15", 
+        "name": "kbu"
+    }, 
+    {
+        "range": "10.1.0.0/17", 
+        "name": "vfnnrw"
+    }, 
+    {
+        "range": "10.60.0.0/16", 
+        "name": "freiburg"
+    }, 
+    {
+        "range": "10.24.192.0/18", 
+        "name": "saar"
+    }, 
+    {
+        "range": "10.99.0.0/16", 
+        "name": "erfurt"
+    }, 
+    {
+        "range": "10.8.0.0/16", 
+        "name": "chemnitz"
+    }, 
+    {
+        "range": "10.19.0.0/16", 
+        "name": "ostvest"
+    }, 
+    {
+        "range": "10.15.0.0/16", 
+        "name": "moehne"
+    }, 
+    {
+        "range": "10.16.0.0/17", 
+        "name": "kuerten"
+    }, 
+    {
+        "range": "10.223.0.0/16", 
+        "name": "darmstadt"
+    }, 
+    {
+        "range": "10.50.0.0/16", 
+        "name": "franken"
+    }, 
+    {
+        "range": "10.105.192.0/18", 
+        "name": "neustadtaisch"
+    }, 
+    {
+        "range": "10.90.0.0/16", 
+        "name": "regensburg"
+    }, 
+    {
+        "range": "10.119.0.0/16", 
+        "name": "dreilaendereck"
+    }, 
+    {
+        "range": "10.146.0.0/16", 
+        "name": "hueckeswagen"
+    }, 
+    {
+        "range": "10.54.0.0/16", 
+        "name": "kassel"
+    }, 
+    {
+        "range": "10.111.0.0/16", 
+        "name": "rheinsiegkreis"
+    }, 
+    {
+        "range": "10.63.0.0/16", 
+        "name": "weimar"
+    }, 
+    {
+        "range": "10.7.0.0/16", 
+        "name": "harz"
+    }, 
+    {
+        "range": "10.207.0.0/16", 
+        "name": "meta"
+    }, 
+    {
+        "range": "10.205.0.0/16", 
+        "name": "amsterdam"
+    }, 
+    {
+        "range": "10.40.0.0/16", 
+        "name": "rheinufer"
+    }, 
+    {
+        "range": "10.123.1.0/24", 
+        "name": "ansbach"
+    }, 
+    {
+        "range": "10.21.0.0/16", 
+        "name": "leichlingen"
+    }, 
+    {
+        "range": "10.1.192.0/18", 
+        "name": "mettmann"
+    }, 
+    {
+        "range": "10.80.0.0/16", 
+        "name": "muenchen"
+    }, 
+    {
+        "range": "10.18.0.0/16", 
+        "name": "nordwest"
+    }, 
+    {
+        "range": "10.188.0.0/16", 
+        "name": "troisdorf"
+    }, 
+    {
+        "range": "10.33.0.0/16", 
+        "name": "ulm"
+    }, 
+    {
+        "range": "10.141.0.0/17", 
+        "name": "lindlar"
+    }, 
+    {
+        "range": "10.3.0.0/16", 
+        "name": "wuppertal"
+    }, 
+    {
+        "range": "10.144.0.0/16", 
+        "name": "badoldesloe"
+    }, 
+    {
+        "range": "172.16.0.0/14", 
+        "name": "dn42"
+    }, 
+    {
+        "range": "10.190.0.0/15", 
+        "name": "stuttgart"
+    }, 
+    {
+        "range": "10.195.0.0/16", 
+        "name": "bayreuth"
+    }, 
+    {
+        "range": "10.62.0.0/16", 
+        "name": "halle"
+    }, 
+    {
+        "range": "10.11.0.0/18", 
+        "name": "augsburg"
+    }, 
+    {
+        "range": "10.14.0.0/16", 
+        "name": "ljubljana"
+    }, 
+    {
+        "range": "10.187.0.0/16", 
+        "name": "nord"
+    }, 
+    {
+        "range": "10.239.0.0/16", 
+        "name": "basel"
+    }, 
+    {
+        "range": "10.123.3.0/24", 
+        "name": "emskirchen"
+    }, 
+    {
+        "range": "10.1.160.0/20", 
+        "name": "muensterstadt"
+    }, 
+    {
+        "range": "10.61.0.0/16", 
+        "name": "leipzig"
+    }, 
+    {
+        "range": "10.105.0.0/18", 
+        "name": "schwabach"
+    }, 
+    {
+        "range": "10.31.0.0/16", 
+        "name": "berlin"
+    }, 
+    {
+        "range": "10.215.0.0/16", 
+        "name": "suedpfalz"
+    }, 
+    {
+        "range": "10.57.0.0/16", 
+        "name": "radevormwald"
+    }, 
+    {
+        "range": "10.52.0.0/16", 
+        "name": "wermelskirchen"
+    }, 
+    {
+        "range": "10.105.128.0/18", 
+        "name": "treuchtlingen"
+    }, 
+    {
+        "range": "10.2.0.0/16", 
+        "name": "hannover"
+    }, 
+    {
+        "range": "10.24.128.0/18", 
+        "name": "luxembourg"
+    }, 
+    {
+        "range": "10.186.0.0/16", 
+        "name": "hennef"
+    }, 
+    {
+        "range": "10.34.0.0/16", 
+        "name": "herford"
+    }, 
+    {
+        "range": "10.4.0.0/16", 
+        "name": "chaosvpn"
+    }, 
+    {
+        "range": "10.109.0.0/16", 
+        "name": "goettingen"
+    }, 
+    {
+        "range": "10.11.64.0/20", 
+        "name": "ratingen"
+    }, 
+    {
+        "range": "10.142.0.0/16", 
+        "name": "rhein-neckar"
+    }
+]
