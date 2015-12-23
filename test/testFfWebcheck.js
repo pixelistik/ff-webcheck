@@ -51,12 +51,24 @@ describe("FfWebcheck", function () {
             assert.strictEqual(result, TEST_COMMUNITY_IP_RANGES[1]);
         });
 
-        it("should return false if no domain identified", function () {
+        it("should return null if no domain identified", function () {
             ffWebcheck.COMMUNITY_IP_RANGES = TEST_COMMUNITY_IP_RANGES;
             ffWebcheck.ips(["999.999.999.999"]);
             var result = ffWebcheck.communitiesByIp();
 
             assert.strictEqual(result, null);
         });
+
+        it("should identify community One by the second public IP", function () {
+            ffWebcheck.COMMUNITY_IP_RANGES = TEST_COMMUNITY_IP_RANGES;
+            ffWebcheck.ips(["999.999.999.999", "123.456.789.1"]);
+            var result = ffWebcheck.communitiesByIp();
+
+            assert.strictEqual(result, TEST_COMMUNITY_IP_RANGES[0]);
+        });
+
+        it("should return null if no IP addresses are known");
+
+        it("should return null if no public IP addresses are known");
     });
 })

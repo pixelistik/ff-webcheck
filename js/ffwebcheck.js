@@ -41,15 +41,19 @@ var FfWebcheck = function FfWebcheck() {
 
     this.communitiesByIp = ko.pureComputed(function () {
         var ipRanges = require("./ipranges.js");
-        var ip = this.publicIps()[0];
+        var publicIps = this.publicIps();
 
-        if (typeof ip === "undefined") {
-            return [];
+        if (typeof publicIps.length === 0) {
+            return null;
         }
 
         var matchingCommunities = this.COMMUNITY_IP_RANGES.filter(function (community) {
-            return ipRanges.isPartOfRange(community.range, ip);
-        }.bind(this));
+            var matchingPublicIps = publicIps.filter(function (publicIp) {
+                return ipRanges.isPartOfRange(community.range, publicIp);
+            });
+
+            return matchingPublicIps.length > 0;
+        });
 
         if (matchingCommunities.length === 1) {
             return matchingCommunities[0];
