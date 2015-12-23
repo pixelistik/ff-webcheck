@@ -67,8 +67,20 @@ describe("FfWebcheck", function () {
             assert.strictEqual(result, TEST_COMMUNITY_IP_RANGES[0]);
         });
 
-        it("should return null if no IP addresses are known");
+        it("should return null if no IP addresses are known", function () {
+            ffWebcheck.COMMUNITY_IP_RANGES = TEST_COMMUNITY_IP_RANGES;
+            ffWebcheck.ips([]);
+            var result = ffWebcheck.communitiesByIp();
 
-        it("should return null if no public IP addresses are known");
+            assert.strictEqual(result, null);
+        });
+
+        it("should return null if no public IP addresses are known", function () {
+            ffWebcheck.COMMUNITY_IP_RANGES = TEST_COMMUNITY_IP_RANGES;
+            ffWebcheck.ips(["192.168.1.1"]);
+            var result = ffWebcheck.communitiesByIp();
+
+            assert.strictEqual(result, null);
+        });
     });
 })
