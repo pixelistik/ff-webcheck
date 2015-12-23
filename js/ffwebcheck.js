@@ -35,10 +35,6 @@ var FfWebcheck = function FfWebcheck() {
         var ipRanges = require("./ipranges.js");
         var publicIps = this.publicIps();
 
-        if (typeof publicIps.length === 0) {
-            return null;
-        }
-
         var matchingCommunities = this.COMMUNITY_IP_RANGES.filter(function (community) {
             var matchingPublicIps = publicIps.filter(function (publicIp) {
                 return ipRanges.isPartOfRange(community.range, publicIp);
