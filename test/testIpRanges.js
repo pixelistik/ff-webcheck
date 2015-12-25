@@ -43,7 +43,7 @@ describe("IP Ranges", function () {
             assert.isFalse(result);
         });
     });
-    
+
     describe("Input validation", function () {
         it("should throw an error on invalid IPv4 address", function () {
             var range = "192.168.123.000/24";
@@ -64,7 +64,7 @@ describe("IP Ranges", function () {
         });
 
         it("should throw an error on invalid IPv4 mask", function () {
-            var range = "192.168.123.000/99";
+            var range = "192.168.123.000/33";
             var ip = "192.168.124.001";
 
             assert.throws(function () {
