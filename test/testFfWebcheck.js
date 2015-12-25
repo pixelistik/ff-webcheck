@@ -23,6 +23,41 @@ describe("FfWebcheck", function () {
         assert(typeof ffWebcheck !== "undefined");
     })
 
+    describe("IP address categorisation", function () {
+        it("should identify a local IPv4 from any of the 3 existing blocks", function () {
+            // https://en.wikipedia.org/wiki/IPv4#Private_networks
+            ffWebcheck.ips([
+                "10.1.2.3",
+                "172.30.30.30",
+                "192.168.1.2"
+            ]);
+
+            assert.include(ffWebcheck.localIps(), "10.1.2.3");
+            assert.include(ffWebcheck.localIps(), "172.30.30.30");
+            assert.include(ffWebcheck.localIps(), "192.168.1.2");
+        });
+
+        it("should identify a public IPv4 address", function () {
+            ffWebcheck.ips([
+                "192.168.1.2",
+                "20.30.40.50"
+            ]);
+
+            assert.include(ffWebcheck.publicIps(), "20.30.40.50");
+            assert.notInclude(ffWebcheck.publicIps(), "192.168.1.2");
+        });
+
+        it("should identify an IPv6 address", function () {
+            ffWebcheck.ips([
+                "20.30.40.50",
+                "2001:0db8:0000:0000:0000:ff00:0042:8329"
+            ]);
+
+            assert.include(ffWebcheck.v6Ips(), "2001:0db8:0000:0000:0000:ff00:0042:8329");
+            assert.notInclude(ffWebcheck.v6Ips(), "20.30.40.50");
+        })
+    })
+
     describe("Domain detection by IP address", function () {
         var TEST_COMMUNITY_IP_RANGES = [
             {
