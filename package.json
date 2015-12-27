@@ -5,6 +5,7 @@
   "main": " ",
   "scripts": {
     "test": "mocha",
+    "mutation": "grunt mutationTest",
     "coverage": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha --",
     "build": "browserify js/app.js -o js/bundle.js",
     "watch": "watchify --debug js/app.js -o js/bundle.js"
@@ -23,7 +24,11 @@
     "watchify": "~3.6.1",
     "rewire": "~2.5.1",
     "istanbul": "~0.4.1",
-    "jsdom": "~7.2.1"
+    "jsdom": "~7.2.1",
+    "grunt-mutation-testing": "~1.3.0",
+    "grunt-cli": "~0.1.13",
+    "grunt": "~0.4.5",
+    "karma": "~0.13.16"
   },
   "dependencies": {
     "browserify": "~12.0.1",
