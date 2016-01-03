@@ -51,7 +51,7 @@ describe("IP Ranges", function () {
 
             assert.throws(function () {
                 ipRanges.isPartOfRange(range, ip);
-            }, RangeError);
+            }, RangeError, "Not a valid IPv4 address");
         });
 
         it("should throw an error on invalid IPv4 range", function () {
@@ -60,17 +60,34 @@ describe("IP Ranges", function () {
 
             assert.throws(function () {
                 ipRanges.isPartOfRange(range, ip);
-            }, RangeError);
+            }, RangeError, "Not a valid IPv4 address");
         });
 
-        it("should throw an error on invalid IPv4 mask", function () {
+        it("should throw an error on invalid (too small) IPv4 mask", function () {
             var range = "192.168.123.000/33";
             var ip = "192.168.124.001";
 
             assert.throws(function () {
                 ipRanges.isPartOfRange(range, ip);
-            }, RangeError);
+            }, RangeError, "Invalid IPv4 mask");
         });
+
+        it("should throw an error on invalid IPv4 (negative) mask", function () {
+            var range = "192.168.123.000/-1";
+            var ip = "192.168.124.001";
+
+            assert.throws(function () {
+                ipRanges.isPartOfRange(range, ip);
+            }, RangeError, "Invalid IPv4 mask");
+        });
+
+        // it("should accept the 0 mask", function () {
+        //     var range = "000.000.000.000/0";
+        //     var ip = "192.168.124.001";
+        //
+        //     var result = ipRanges.isPartOfRange(range, ip);
+        //     assert.isTrue(result);
+        // });
 
         it("should throw an error on missing IPv4 mask", function () {
             var range = "192.168.123.000";
@@ -78,7 +95,7 @@ describe("IP Ranges", function () {
 
             assert.throws(function () {
                 ipRanges.isPartOfRange(range, ip);
-            }, RangeError);
+            }, RangeError, "Missing IPv4 mask");
         });
 
         it("should throw an error on empty IPv4 mask", function () {
@@ -87,7 +104,7 @@ describe("IP Ranges", function () {
 
             assert.throws(function () {
                 ipRanges.isPartOfRange(range, ip);
-            }, RangeError);
+            }, RangeError, "Missing IPv4 mask");
         });
     });
 });
