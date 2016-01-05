@@ -42,9 +42,15 @@ var FfWebcheck = function FfWebcheck() {
 
             return matchingIps.length > 0;
         });
-
-        if (matchingCommunities.length === 1) {
-            return matchingCommunities[0].name;
+        if (matchingCommunities.length > 0) {
+            return matchingCommunities.sort(function (a, b) {
+                // "dn42" is not a real community, it should always come last
+                if (a.name === "dn42") {
+                    return 1;
+                } else {
+                    return -1;
+                }
+            })[0].name;
         } else {
             return null;
         }

@@ -117,5 +117,61 @@ describe("FfWebcheck", function () {
 
             assert.strictEqual(result, null);
         });
+
+        describe("special handling of dn42 net", function () {
+            it("should return the 'real' community when first in the list", function () {
+                ffWebcheck.COMMUNITY_IP_RANGES = [
+                    {
+                        name: "One",
+                        range: "10.456.789.0/24"
+                    },
+                    {
+                        name: "dn42",
+                        range: "172.16.0.0/14"
+                    }
+                ];
+
+                ffWebcheck.ips(["10.456.789.1", "172.16.0.1"]);
+                var result = ffWebcheck.communityFromIp();
+
+                assert.strictEqual(result, "One");
+            });
+
+            it("should return the 'real' community when second in the list", function () {
+                ffWebcheck.COMMUNITY_IP_RANGES = [
+                    {
+                        name: "dn42",
+                        range: "172.16.0.0/14"
+                    },
+                    {
+                        name: "One",
+                        range: "10.456.789.0/24"
+                    }
+                ];
+
+                ffWebcheck.ips(["10.456.789.1", "172.16.0.1"]);
+                var result = ffWebcheck.communityFromIp();
+
+                assert.strictEqual(result, "One");
+            });
+
+            it("should return dn42 as community when it's the only match", function () {
+                ffWebcheck.COMMUNITY_IP_RANGES = [
+                    {
+                        name: "dn42",
+                        range: "172.16.0.0/14"
+                    },
+                    {
+                        name: "One",
+                        range: "99.99.789.0/24"
+                    }
+                ];
+
+                ffWebcheck.ips(["10.456.789.1", "172.16.0.1"]);
+                var result = ffWebcheck.communityFromIp();
+
+                assert.strictEqual(result, "dn42");
+            });
+        });
     });
 })
