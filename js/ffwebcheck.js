@@ -72,6 +72,30 @@ var FfWebcheck = function FfWebcheck() {
             });
         }.bind(this))
     }.bind(this));
+
+    this.v4v6ConnectivityProbes = ko.observableArray();
+
+    this.ipv4ConnectivityOk = ko.pureComputed(function () {
+        var successfulv4Probes = this.v4v6ConnectivityProbes().filter(function (probe) {
+            return probe.protocol === "4";
+        });
+
+        return successfulv4Probes.length > 0;
+    }.bind(this));
+
+    this.ipv6ConnectivityOk = ko.pureComputed(function () {
+        var successfulv6Probes = this.v4v6ConnectivityProbes().filter(function (probe) {
+            return probe.protocol === "6";
+        });
+
+        return successfulv6Probes.length > 0;
+    }.bind(this));
+
+    if (typeof window !== "undefined") {
+        window.connectivityCallback = function (data) {
+            this.v4v6ConnectivityProbes.push(data);
+        }.bind(this);
+    }
 };
 
 module.exports = FfWebcheck;

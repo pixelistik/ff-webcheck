@@ -39,8 +39,16 @@
                     <span data-bind="text: success"></span>
                 </li>
             </ul>
+
+            <h2>IP support</h2>
+            <p>According to ipv6-test.com</p>
+
+            <p data-bind="visible: ipv4ConnectivityOk">IPv4 is OK</p>
+            <p data-bind="visible: ipv6ConnectivityOk">IPv6 is OK</p>
         </div>
 
         <script src="js/bundle.js"></script>
+        <script src="http://v6.zone6.ipv6-test.com/json/proto.php?callback=connectivityCallback"></script>
+        <script src="http://v4.zone4.ipv6-test.com/json/proto.php?callback=connectivityCallback"></script>
     </body>
 </html>
