@@ -33,14 +33,14 @@ var FfWebcheck = function FfWebcheck() {
 
     this.communityFromIp = ko.pureComputed(function () {
         var ipRanges = require("./ipranges.js");
-        var publicIps = this.publicIps();
+        var ips = this.localIps();
 
         var matchingCommunities = this.COMMUNITY_IP_RANGES.filter(function (community) {
-            var matchingPublicIps = publicIps.filter(function (publicIp) {
-                return ipRanges.isPartOfRange(community.range, publicIp);
+            var matchingIps = ips.filter(function (ip) {
+                return ipRanges.isPartOfRange(community.range, ip);
             });
 
-            return matchingPublicIps.length > 0;
+            return matchingIps.length > 0;
         });
 
         if (matchingCommunities.length === 1) {
