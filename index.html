@@ -9,8 +9,7 @@
         <div class="container">
             <h1>ff-webcheck</h1>
 
-            <h2>IP addresses</h2>
-            <h3>Local</h3>
+            <h2>Local IPv4 addresses</h2>
             <ul data-bind="foreach: localIps">
                 <li data-bind="text: $data">
                 </li>
@@ -20,13 +19,13 @@
                 Freifunk-Community laut Netzbereich: <span data-bind="text: communityFromIp"></span>
             </p>
 
-            <h3>Public</h3>
+            <h2>Public IPv4 addresses</h2>
             <ul data-bind="foreach: publicIps">
                 <li data-bind="text: $data">
                 </li>
             </ul>
 
-            <h3>IPv6</h3>
+            <h2>IPv6 addresses</h2>
             <ul data-bind="foreach: v6Ips">
                 <li data-bind="text: $data">
                 </li>
