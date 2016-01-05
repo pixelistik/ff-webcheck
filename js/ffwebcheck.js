@@ -58,8 +58,9 @@ var FfWebcheck = function FfWebcheck() {
 
     var connectivityTestUrls = [
         { url: "http://google.com"},
-        { url: "http://ipv6.test-ipv6.com/"},
         { url: "http://10.155.0.1/cgi-bin/status"},
+        { url: "http://twitter.com"},
+        { url: "http://www.amazon.com"},
     ];
 
     this.urlConnectivity = ko.observableArray([]);
