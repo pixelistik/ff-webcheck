@@ -16,13 +16,15 @@
                 </li>
             </ul>
 
+            <p data-bind="visible: communityFromIp() !== null">
+                Freifunk-Community laut Netzbereich: <span data-bind="text: communityFromIp"></span>
+            </p>
+
             <h3>Public</h3>
             <ul data-bind="foreach: publicIps">
                 <li data-bind="text: $data">
                 </li>
             </ul>
-
-            <p data-bind="text: communityFromIp"></p>
 
             <h3>IPv6</h3>
             <ul data-bind="foreach: v6Ips">
